@@ -1,0 +1,210 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  margin: 0 auto;
+  max-width: 1366px;
+}
+.logo {
+  width: 250px;
+  min-width: 200px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+}
+.logo a {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-around;
+}
+.links .demoBtn {
+  display: none;
+  opacity: 0;
+}
+.link {
+  position: relative;
+  text-align: center;
+}
+.link a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.link:hover::after,
+.link.active::after {
+  width: 100%;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #35017d 0%, #a702d8 100%);
+  left: 0px;
+  bottom: -10px;
+  border-radius: 50px;
+  transition: var(--transitionTiming);
+}
+.link a {
+  padding: 5px;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+.mobileMenu {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  position: relative;
+}
+.credits {
+  font-size: 15px;
+}
+.credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.creditBubble {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #4a0385 20%, #a702d8 80%);
+}
+/* Add this to your navbar.module.css file */
+
+.popup {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 25;
+}
+
+.popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popupOption {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+  border-radius: 8px;
+  transition: all .2s ease-in-out;
+}
+
+.popupOption:hover {
+  background: linear-gradient(to bottom, #4a0385 20%, #a702d8 80%);
+  color: #fff;
+}
+
+/* media queries */
+@media screen and (max-width: 1024px) {
+  .links {
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .buttons .demoBtn {
+    display: none;
+    opacity: 0;
+  }
+  .links {
+    display: none;
+    opacity: 0;
+  }
+  .links .demoBtn {
+    display: flex;
+    opacity: 1;
+  }
+  .links.active {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #4a0385 20%, #200129 80%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+    opacity: 1;
+  }
+  .links.active .link a {
+    font-size: 30px;
+  }
+  .buttons {
+    margin-left: auto;
+  }
+  .mobileMenu {
+    z-index: 101;
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+  }
+  .mobileMenu.active {
+    position: fixed;
+    right: 5%;
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .buttons {
+    gap: 10px;
+  }
+  .buttons .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  .logo {
+    font-size: 25px;
+  }
+  .navbar {
+    padding: 25px;
+  }
+  .logo {
+    min-width: 100px;
+    width: 200px;
+  }
+}

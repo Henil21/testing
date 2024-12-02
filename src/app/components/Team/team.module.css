@@ -1,0 +1,130 @@
+.teamWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.teamTitle {
+  text-align: center;
+}
+.teamText {
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+.profileCards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  min-height: 50vh;
+  position: relative;
+}
+.profileCard img{
+  object-position: top;
+}
+
+/* testing */
+.profileCards:not(:hover) .profileCard.active {
+  scale: 1;
+  flex-basis: 50%;
+  filter: grayscale(0);
+}
+.profileCards:not(:hover) .profileCard.active .content,
+.profileCard:hover .content {
+  display: flex;
+  opacity: 1;
+}
+
+.profileCard {
+  min-width: 225px;
+  flex-basis: 25%;
+  position: relative;
+  background-color: #d9d9d9;
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  scale: 0.9;
+  transition: 0.3s ease-in-out;
+}
+.profileCard:hover {
+  scale: 1;
+  flex-basis: 50%;
+}
+.profileCard:not(:hover) {
+  filter: grayscale(1);
+}
+.profileCard .backgroundImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.profileCard .backgroundImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profileCard .content {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #a602d8;
+  background: linear-gradient(
+    181deg,
+    rgba(180, 10, 243, 0) 22.73%,
+    #38014c 95.67%
+  );
+  padding: 15px;
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.3s ease-in-out;
+}
+.profileCard .content .name {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 30px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.profileCard .content .tag {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+}
+@media screen and (max-width: 700px) {
+  .profileCards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .profileCard,
+  .profileCard.active {
+    flex-basis: 40%;
+    aspect-ratio: 3/4;
+    scale: 1;
+    filter: none !important;
+  }
+  .profileCard .content {
+    display: flex;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .profileCard,  .profileCard.active, .profileCard:hover {
+    flex-basis: 90%;
+  }
+  .profileCard .content .name {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .profileCard .content .tag {
+    font-weight: 300;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,357 @@
+.main {
+  width: 100%;
+  min-height: calc(100vh - 250px);
+  /* for centering the element in the center I have used the margin auto property . */
+  margin: 0 auto;
+  max-width: 1366px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--flex-gap);
+  flex-direction: column;
+  position: relative;
+  /* for creating the scrollable div, we have to specify the height for it */
+  /* I had substracted the height of the navbar */
+}
+.main::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 5%;
+  top: 5%;
+  background: #b100cd;
+  filter: blur(200px);
+  z-index: -1;
+}
+.main section {
+  width: 100%;
+  padding: 0px 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  position: relative;
+  height: calc(100vh - 150px);
+  overflow: hidden;
+}
+.userAsideBar {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: 0.2s;
+}
+.main section.sideBarClose {
+  gap: 0px;
+}
+.sideBarOpen .userAsideBar {
+  flex-basis: 25%;
+}
+.sideBarClose .userAsideBar {
+  flex-basis: 0%;
+}
+
+.userSearchBar {
+  border: 1px dashed rgba(245, 245, 245, 0.2);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px;
+}
+.searchIcon {
+  width: 20px;
+  filter: invert(1);
+}
+.searchBar {
+  flex: 1;
+  font-size: 16px;
+  line-height: 14px;
+  color: rgba(245, 245, 245, 0.4);
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px dashed rgba(245, 245, 245, 0.2);
+  border-radius: 20px;
+  position: relative;
+}
+
+.emptyChat {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.emptyChatImage {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.emptyChatText {
+  font-size: 18px;
+  color: #666;
+}
+.messageList {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.messageContainer {
+  max-width: 75%;
+  display: flex;
+  align-items: end;
+  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+}
+.messageContainer:nth-child(1) {
+  margin-top: auto;
+}
+.userMessage {
+  color: #d9d9d9;
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+.chatbotMessage {
+  color: #333;
+  align-self: flex-start;
+}
+.message {
+  word-wrap: break-word;
+  max-width: 400px;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 10px 15px;
+  position: relative;
+}
+.userMessage .message {
+  background: linear-gradient(92.66deg, #b100cd 0%, #590067 100%);
+  border-radius: 12px 12px 0px 12px;
+}
+.chatbotMessage .message {
+  border-radius: 12px 12px 12px 0px;
+  background: #d9d9d9;
+}
+.messageIdicator {
+  position: absolute;
+  bottom: 0px;
+  width: 14px;
+  height: 20px;
+  z-index: -1;
+}
+.messageIdicator::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+.userMessage .messageIdicator {
+  left: 100%;
+  background: #590067;
+}
+.chatbotMessage .messageIdicator {
+  right: 100%;
+  background: #d9d9d9;
+}
+.userMessage .messageIdicator::after {
+  border-radius: 0px 0px 0px 20px;
+}
+.chatbotMessage .messageIdicator::after {
+  border-radius: 0px 0px 20px 0px;
+}
+.messageIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+.inputForm {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 16px;
+  margin-top: 5px;
+  padding: 12px 15px;
+  background: rgba(245, 245, 245, 0.1);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+}
+
+.inputField {
+  flex-grow: 1;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 18px;
+  background-color: transparent;
+  color: #d9d9d9;
+}
+.sendButton {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.sendButton img {
+  width: 30px;
+}
+
+.sideBarToggleBtn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 15px;
+}
+.sideBarToggleBtn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.chatBox .sideBarToggleBtn {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+}
+.chatBox .sideBarToggleBtn.showSideBar {
+  pointer-events: all;
+  display: block;
+  z-index: 10;
+  opacity: 1;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+.loginErrMessage {
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 12px;
+}
+.loginErrorHeading {
+  font-size: 25px;
+  text-align: center;
+}
+
+/* customizing the scrollbar */
+/* width */
+.chatBox .messageList::-webkit-scrollbar {
+  width: 0px;
+}
+.userAsideBar::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* media queries */
+@media screen and (max-width: 950px) {
+  .userAsideBar {
+    min-width: 250px;
+  }
+  .sideBarClose .userAsideBar {
+    min-width: 0px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main section.sideBarClose {
+    gap: 20px;
+  }
+  .main section.sideBarOpen {
+    gap: 0px;
+  }
+  .sideBarOpen .userAsideBar {
+    flex-basis: 0%;
+    min-width: 0;
+  }
+  .sideBarClose .userAsideBar {
+    flex-basis: 90%;
+    min-width: 250px;
+  }
+  .sideBarOpen .chatBox {
+    opacity: 1;
+  }
+  .sideBarClose .chatBox {
+    min-width: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .chatBox .sideBarToggleBtn {
+    pointer-events: all;
+    display: block;
+    z-index: 10;
+    opacity: 1;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .chatBox .sideBarToggleBtn.showSideBar {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main section {
+    width: 100%;
+    padding: 25px;
+    padding-bottom: 50px;
+    min-height: calc(100vh - 100px);
+  }
+  .main {
+    min-height: calc(100vh - 100px);
+  }
+  .message {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .inputField {
+    width: 60px;
+  }
+  .emptyChatImage {
+    max-width: 120px;
+  }
+  .sendButton img {
+    width: 25px;
+  }
+  .messageIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .messageIdicator {
+    width: 10px;
+  }
+  .chatBox .message {
+    padding: 8px 10px;
+  }
+}

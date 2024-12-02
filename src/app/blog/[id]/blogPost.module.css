@@ -1,0 +1,71 @@
+/* blogPost.module.css */
+
+/* Container for the post */
+.container {
+    max-width: 800px;              /* Max width for readability */
+    margin: 50px auto;            /* Center the container */
+    padding: 20px;                /* Padding around content */
+    background-color: #ffffff;    /* White background for the post */
+    border-radius: 12px;          /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    line-height: 1.6;             /* Better line spacing */
+}
+
+/* Title styling */
+.title {
+    font-size: 2.5rem;            /* Large font size for the title */
+    font-weight: bold;             /* Bold title */
+    color: #0070f3;               /* Primary color */
+    margin-bottom: 10px;          /* Space below the title */
+    text-align: center;           /* Centered title */
+}
+
+/* Timestamp styling */
+.timestamp {
+    font-size: 0.9rem;            /* Smaller font size for the timestamp */
+    color: #666;                  /* Gray color */
+    margin-bottom: 20px;          /* Space below the timestamp */
+    text-align: center;           /* Centered timestamp */
+}
+
+/* Content styling */
+.content {
+    font-size: 1.2rem;            /* Standard font size for content */
+    color: #333;                  /* Darker text color for readability */
+    margin-bottom: 30px;          /* Space below content */
+    white-space: pre-wrap;        /* Preserve whitespace formatting */
+}
+
+/* Button styling */
+.backButton {
+    display: inline-block;         /* Inline block for the button */
+    padding: 10px 20px;           /* Padding for button */
+    background-color: #0070f3;    /* Primary button color */
+    color: #ffffff;               /* White text color */
+    border: none;                 /* No border */
+    border-radius: 8px;          /* Rounded corners */
+    cursor: pointer;              /* Pointer cursor on hover */
+    font-size: 1rem;              /* Standard font size */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+    text-align: center;           /* Centered text */
+}
+
+.backButton:hover {
+    background-color: #005bb5;    /* Darker color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;              /* Reduced margins for mobile */
+        padding: 15px;             /* Reduced padding for mobile */
+    }
+
+    .title {
+        font-size: 2rem;           /* Smaller title on mobile */
+    }
+
+    .content {
+        font-size: 1rem;           /* Smaller content font on mobile */
+    }
+}

@@ -1,0 +1,55 @@
+.befinitsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: relative;
+}
+.benifitTitle {
+  text-align: center;
+}
+.cards {
+  width: 100%;
+  display: flex;
+  gap: 75px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  position: relative;
+  max-width: 200px;
+  padding: 30px 10px;
+  padding-top: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background: linear-gradient(to bottom, #a602d849 40%, #101010);
+  border-radius: 8px;
+}
+.card .cardTitle {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+.card .cardDesc {
+  font-size: 13px;
+  text-align: center;
+  color: #c7c7c7;
+}
+.cardIcon {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #8357fbbb 0%, #9b74ff61 100%);
+}

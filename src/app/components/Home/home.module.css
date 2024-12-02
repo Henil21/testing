@@ -1,0 +1,142 @@
+.homeWrapper {
+  display: flex;
+  min-height: 50vh;
+  justify-content: space-between;
+  gap: 50px;
+}
+.left,
+.right {
+  flex-basis: 50%;
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+.left {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.heroTitle {
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 103%;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.image {
+  min-width: 250px;
+  position: absolute;
+  width: 50%;
+  aspect-ratio: 4/3;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image1 {
+  top: 0;
+  left: 10%;
+}
+.image2 {
+  bottom: 25%;
+  right: 10%;
+}
+.cards {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+.card {
+  position: absolute;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  font-size: 18px;
+  gap: 6.84px;
+  background: #ffffff;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #a702d8;
+}
+.card span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #a702d8;
+}
+.card1 {
+  right: 0;
+}
+.card2 {
+  right: 0;
+  bottom: 20%;
+}
+.card3 {
+  left: 0;
+  top: 40%;
+}
+.rightWrapper {
+  min-height: 50vh;
+  width: 100%;
+  position: relative;
+}
+.right::before {
+  content: "";
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  position: absolute;
+  background: #9102c5cb;
+  filter: blur(255px);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* media queries */
+@media screen and (max-width: 950px) {
+  .homeWrapper {
+    flex-direction: column;
+    gap: 75px;
+  }
+  .left,
+  .right {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroTitle {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+    .heroTitle {
+        font-size: 40px;
+      }
+  .card {
+    padding: 8px;
+    font-size: 15px;
+  }
+  .card span {
+    width: 15px;
+    height: 15px;
+  }
+  .image1 {
+    left: 0%;
+  }
+  .image2 {
+    right: 0%;
+  }
+}

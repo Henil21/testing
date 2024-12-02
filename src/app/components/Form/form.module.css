@@ -1,0 +1,74 @@
+.formWrapper {
+  width: 100%;
+  display: flex;
+  gap: 150px;
+  padding: 50px 0;
+}
+.leftSection,
+.rightSection {
+  flex-basis: 50%;
+}
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+}
+.leftSection .titleText {
+  text-align: center;
+}
+.leftSection .btn {
+  height: max-content;
+  aspect-ratio: 1/1;
+}
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.rightSection .inputWrapper input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  font-size: 18px;
+  color: #fff;
+}
+.rightSection .inputWrapper label {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.rightSection .inputWrapper input::placeholder {
+  color: #d7d7d775;
+  font-size: 16px;
+}
+
+/* media queries */
+@media only screen and (max-width: 900px) {
+  .formWrapper {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .formWrapper {
+    gap: 50px;
+  }
+  .leftSection .titleText {
+    background: linear-gradient(to right, #4a0385 20%, #a702d8 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-clip: text;
+  }
+}

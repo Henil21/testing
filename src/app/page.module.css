@@ -1,0 +1,29 @@
+.main{
+  width: 100%;
+  /* for centering the element in the center I have used the margin auto property */
+  margin: 0 auto;
+  max-width: 1366px;
+  display: flex;
+  gap: var(--flex-gap);
+  flex-direction: column;
+}
+.main section{
+  width: 100%;
+  padding: 10px 50px;
+}
+.formWrapper{
+  background: #57027157;
+}
+.footerWrapper{
+  margin-top: calc(-1 * var(--flex-gap));
+  background: #fff;
+}
+
+/* media queries */
+@media screen and (max-width: 600px) {
+  .main section{
+    width: 100%;
+    padding: 0px 25px;
+  }
+
+}

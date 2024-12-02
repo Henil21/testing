@@ -1,0 +1,70 @@
+/* blog.module.css */
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #150815 20%, #430b54 80%);
+  padding: 20px;
+}
+
+/* Header Styling */
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f9f5f5;
+  text-align: center;
+}
+
+/* Card Container */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0070f3;
+}
+
+.card p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Hover Effect on Card */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Timestamp Styling */
+.card p:last-child {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+      width: 90%;
+  }
+}
