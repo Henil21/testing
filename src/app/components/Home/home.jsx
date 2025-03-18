@@ -34,7 +34,7 @@ const Home = () => {
             to better patient care and results, making Axamine an indispensable
             tool in healthcare settings{" "}
           </p>
-          <Link href={"/report"}>
+          <Link href={"/chatbox"}>
             <button className={`${styles.btn} buttonWithGradient`}>
               Demo Request
               <img src="/arrow.svg" alt="arrowImage" />

@@ -1,11 +1,10 @@
 import styles from "./benifits.module.css";
 
 
-
 const cardDetails = [
   {
     id: 1,
-    title: "Accuracy: ",
+    title: "Accuracy",
     desc: "AI systems can analyze vast amounts of data quickly and accurately, leading to more precise and reliable diagnoses. They can detect patterns and anomalies that may not be obvious to human clinicians",
     number: "01",
   },
@@ -45,7 +44,7 @@ const Benifits = () => {
   return (
     <div className={styles.befinitsWrapper}>
       <h2 className={`${styles.benifitTitle} titleTextWithGradient`}>
-        Our Benifits
+        Our Benefits
       </h2>
       <div className={styles.cards}>
         {cardDetails?.map((card) => (

@@ -15,11 +15,12 @@ const Report = () => {
       return;
     }
 
+    
     setLoading(true);
     try {
       // API call to generate the report
       const response = await axios.post(
-        `https://api.axamine.ignitionnestlabs.in/chat/report`,
+        `https://gateway-server.agreeablepebble-91c72eda.southindia.azurecontainerapps.io/chat/report`,
         null, // No body required
         {
           headers: {

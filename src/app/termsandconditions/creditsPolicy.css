@@ -1,0 +1,67 @@
+/* Dark Theme Credit Policy Styles */
+
+.credits-policy-container {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .header {
+    text-align: center;
+    border-bottom: 2px solid #444;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #c54ff3;
+  }
+  
+  .header p {
+    font-size: 1rem;
+    color: #999;
+  }
+  
+  .policy-content section {
+    margin-bottom: 25px;
+  }
+  
+  .policy-content h2 {
+    font-size: 1.5rem;
+    color: #ff0000;
+    margin-bottom: 10px;
+  }
+  
+  .policy-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .policy-content ul li {
+    margin-bottom: 8px;
+  }
+  
+  .policy-content p {
+    margin: 10px 0;
+  }
+  
+  strong {
+    color: rgb(255, 0, 0);
+  }
+  
+  .policy-content a {
+    color: #4da8da;
+    text-decoration: underline;
+  }
+  
+  .policy-content a:hover {
+    color: #f05454;
+  }
+  

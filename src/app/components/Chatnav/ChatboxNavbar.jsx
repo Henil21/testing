@@ -6,14 +6,12 @@ import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/slices/authSlice";
 import { useCredits } from "../../hooks/useCredits";
-import { FaRegUserCircle } from "react-icons/fa";
 
-const Navbar = () => {
+const ChatboxNavbar = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
   const toggleMenu = () => setMenuActive(!menuActive);
   const [popupVisible, setPopupVisible] = useState(false);
-  const [SignInToggle, setSignInToggle] = useState(false);
   const popupRef = useRef(null);  
 
   //for active links
@@ -42,9 +40,7 @@ const Navbar = () => {
     purchaseCredits(creditsAmount); // Pass the number of credits to purchase
     setPopupVisible(false); // Close the popup
   };
- const handleToggleSignIn = ()=>{
-  setSignInToggle(!SignInToggle); //
- }
+
   // //handle buy credits functions
   // const handleBuyCredits = () => {
   //   setPopupVisible(false)
@@ -113,20 +109,18 @@ const Navbar = () => {
           </button>
         </Link>
       </ul>
-      <div className={styles.buttons} >
+      <div className={styles.buttons}>
         {isAuthenticated ? (
           <button
-            className={`${styles.userProfile} `}
+            className={`${styles.btn} buttonWithGradientBorder`}
             onClick={() => setPopupVisible(!popupVisible)}
-           
           >
-<FaRegUserCircle className={styles.userProfileIcon}/>
+            <p className={styles.credits}>
+              Credits: <span className={styles.creditBubble}>{credits}</span>
+            </p>
             {/* popup */}
             {popupVisible && (
-              <div className={styles.popup} ref={popupRef} >
-                <p className={styles.credits}>
-                  Total Credits: <span className={styles.creditBubble}>{credits}</span>
-                </p>
+              <div className={styles.popup} ref={popupRef}>
               <ul>
                 <li
                   className={styles.popupOption}
@@ -149,19 +143,19 @@ const Navbar = () => {
           </button>
         ) : (
           <Link href="/signin">
-            <button className={`${styles.signInBtn} `}>
+            <button className={`${styles.btn} buttonWithGradientBorder`}>
               Sign In
             </button>
           </Link>
         )}
-        {/* <Link href={"/chatbox"} onClick={() => menuClickFunction("/chatbox")}>
+        <Link href={"/chatbox"} onClick={() => menuClickFunction("/chatbox")}>
           <button
             className={`${styles.btn} ${styles.demoBtn} buttonWithGradient`}
           >
             Demo Request
           </button>
-        </Link> */}
-      </div> 
+        </Link>
+      </div>
       <div
         className={
           menuActive
@@ -181,4 +175,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default ChatboxNavbar;

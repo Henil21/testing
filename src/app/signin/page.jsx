@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { auth, googleProvider, signInWithPopup } from '../firebase/firebaseConfig';
 
+
 const SignInContent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,7 +34,7 @@ const SignInContent = () => {
         const firebaseToken = await user.getIdToken();
     
         // Step 2: Exchange the Firebase token with your backend
-        const response = await axios.post('https://api.axamine.ignitionnestlabs.in/user/exchange-token', {
+        const response = await axios.post('https://gateway-server.agreeablepebble-91c72eda.southindia.azurecontainerapps.io/user/exchange-token', {
           firebase_token: firebaseToken,
         });
     
@@ -57,7 +58,11 @@ const SignInContent = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://api.axamine.ignitionnestlabs.in/user/login', {
+      if(!agree) {
+        setError('Please agree to the Terms and Conditions.');
+        return;
+      }
+      const response = await axios.post('https://gateway-server.agreeablepebble-91c72eda.southindia.azurecontainerapps.io/user/login', {
         email,
         password,
       });
@@ -71,7 +76,7 @@ const SignInContent = () => {
       setError('Login failed. Please check your credentials.');
     }
   };
-  
+  const [agree, setAgree] = useState(false);
   
 
   return (
@@ -79,7 +84,7 @@ const SignInContent = () => {
       <form onSubmit={handleSubmit} className={styles.form}>
         <h2 className={styles.title}>{signInMessage}</h2>
         {error && <p className={styles.error}>{error}</p>}
-        <input
+        {/* <input
           type="email"
           placeholder="Email"
           value={email}
@@ -95,15 +100,36 @@ const SignInContent = () => {
           className={styles.input}
           required
         />
-        <button type="submit" className={`${styles.button} buttonWithGradient`}>Sign In</button>
+        <button type="submit" className={`${styles.button} buttonWithGradient`}>Sign In</button> */}
+        <div className={styles.checkboxContainer}>
+          <input
+            type="checkbox"
+            id="agree"
+            checked={agree}
+            onChange={() => setAgree(!agree)}
+          />
+          <label htmlFor="agree" className={styles.checkboxLabel}>
+            I agree to the{" "}
+            <Link href="/termsandconditions" className={styles.termsLink}>
+              Terms and Conditions
+            </Link>
+          </label>
+        </div>
+        {!agree && <p className={styles.error}>Please agree to the Terms and Conditions.</p>}
         <button
           type="button"
+          disabled={!agree}
           onClick={handleGoogleSignIn}
           className={`${styles.button} buttonWithGradient`}
         >
           Sign In with Google
+           <img
+    src="https://www.google.com/favicon.ico"
+    alt="Google Logo"
+    className={styles.googleLogo}
+  />
         </button>
-        <p className={styles.smallPara}>Don&apos;t have an account? <Link className={styles.sinUpLink} href={"/signup"}>SIGNUP</Link></p>
+        {/* <p className={styles.smallPara}>Don&apos;t have an account? <Link className={styles.sinUpLink} href={"/signup"}>SIGNUP</Link></p> */}
       </form>
     </div>
   );

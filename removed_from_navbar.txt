@@ -1,0 +1,62 @@
+     <div className={styles.buttons}>
+        {isAuthenticated ? (
+          <button
+            className={`${styles.btn} buttonWithGradientBorder`}
+            onClick={() => setPopupVisible(!popupVisible)}
+          >
+            <p className={styles.credits}>
+              Credits: <span className={styles.creditBubble}>{credits}</span>
+            </p>
+            {/* popup */}
+            {popupVisible && (
+              <div className={styles.popup} ref={popupRef}>
+              <ul>
+                <li
+                  className={styles.popupOption}
+                  onClick={() => handleBuyCredits(100)}
+                >
+                  Buy 100 Credits for ₹199
+                </li>
+                <li
+                  className={styles.popupOption}
+                  onClick={() => handleBuyCredits(300)}
+                >
+                  Buy 300 Credits for ₹499
+                </li>
+                <li className={styles.popupOption} onClick={handleLogout}>
+                  Logout
+                </li>
+              </ul>
+            </div>
+            )}
+          </button>
+        ) : (
+          <Link href="/signin">
+            <button className={`${styles.btn} buttonWithGradientBorder`}>
+              Sign In
+            </button>
+          </Link>
+        )}
+        <Link href={"/chatbox"} onClick={() => menuClickFunction("/chatbox")}>
+          <button
+            className={`${styles.btn} ${styles.demoBtn} buttonWithGradient`}
+          >
+            Demo Request
+          </button>
+        </Link>
+      </div> 
+      <div
+        className={
+          menuActive
+            ? `${styles.mobileMenu} ${styles.active}`
+            : styles.mobileMenu
+        }
+        onClick={toggleMenu}
+      >
+        {menuActive ? (
+          <img src="/crossIcon.png" alt="icon" />
+        ) : (
+          <img src="/menuIcon.png" alt="icon" />
+        )}
+        {/* \\\ */}
+      </div>

@@ -9,7 +9,7 @@ export const useCredits = (dispatch) => {
     try {
       // Step 1: Call the backend to create an order
       const response = await axios.post(
-        "https://api.axamine.ignitionnestlabs.in/credits/purchase-credits",
+        "https://gateway-server.agreeablepebble-91c72eda.southindia.azurecontainerapps.io/credits/purchase-credits",
         { credits },
         {
           headers: {
@@ -23,9 +23,10 @@ export const useCredits = (dispatch) => {
 
       // Step 2: Configure Razorpay options
       const options = {
-        key: "rzp_test_AgEaPTpjzgkigh",
+        // key: "rzp_live_USIQV4W7w1TcH2",
+          key: "rzp_live_Qlv93k2tKoaW0f",
         amount: amount * 100,
-        currency:"INR",
+        currency: "INR",
         name: "Axamine",
         description: "Purchase Credits",
         order_id,

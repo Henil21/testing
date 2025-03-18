@@ -15,9 +15,9 @@ const UserCard = ({ data }) => {
             {tagMessage}
         </div>
       </div>
-      <div className={styles.messageCount}>
+      {/* <div className={styles.messageCount}>
         3
-      </div>
+      </div> */}
     </div>
   );
 };

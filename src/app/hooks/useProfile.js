@@ -9,7 +9,7 @@ const useProfile = (authToken) => {
   const dispatch = useDispatch();
   const fetchProfile = async () => {
     try {
-      const response = await axios.get("https://api.axamine.ignitionnestlabs.in/user/profile", {
+      const response = await axios.get("https://gateway-server.agreeablepebble-91c72eda.southindia.azurecontainerapps.io/user/profile", {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

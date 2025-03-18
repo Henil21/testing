@@ -15,11 +15,12 @@ const SignUp = () => {
   const [error, setError] = useState('');
   const dispatch = useDispatch();
   const router = useRouter();
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://api.axamine.ignitionnestlabs.in/signup', {
+      const response = await axios.post('https://gateway-server.agreeablepebble-91c72eda.southindia.azurecontainerapps.io/user/signup', {
         name,
         email,
         password,
