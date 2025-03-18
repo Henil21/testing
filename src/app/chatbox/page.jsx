@@ -42,7 +42,7 @@ const ChatBox = () => {
   const router = useRouter();
   const { isAuthenticated } = useSelector((state) => state.auth);
   const fileInputRef = useRef(null); // Create a ref for the file input field
-  const dropdownContent = document.getElementById('dropdownContent');
+ // const dropdownContent = document.getElementById('dropdownContent');
   const [DropUp,setDropUp] = useState(false);
 
   const toggleDropUp = ()=>{
